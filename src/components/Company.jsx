@@ -102,6 +102,9 @@ const css = {
     transition: "0.3s all",
     borderRadius: "12px",
     width: "110px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
 
     _hover: {
       background: "#C22329",

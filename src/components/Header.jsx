@@ -129,7 +129,7 @@ const css = {
     padding: "10px 20px",
     fontWeight: "500",
     fontSize: "16px",
-    width: "155px",
+    width: "175px",
     transition: "0.3s all",
     display:"flex",
     justifyContent:"center",

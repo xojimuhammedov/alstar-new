@@ -5,7 +5,7 @@ import Navbar from "./../../components/Navbar";
 import Footer from "./../../components/Footer";
 import { Image, Link } from "@chakra-ui/react";
 
-import CallIcon from '../../assets/call.png'
+// import CallIcon from '../../assets/call-icon.png'
 
 function Career() {
   return (
@@ -22,12 +22,11 @@ function Career() {
       <footer>
         <Footer />
       </footer>
-      <Link
+      {/* <Link
         href="tel:+998770008700"
         className="position-link">
-        <Image w={'30px'} src={CallIcon} alt="CallIcon" />
-        +998770008700
-      </Link>
+        <Image w={'60px'} src={CallIcon} alt="CallIcon" />
+      </Link> */}
     </>
   );
 }

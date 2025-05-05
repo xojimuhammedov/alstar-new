@@ -129,7 +129,7 @@ const css = {
   },
   link: {
     color: "#111",
-    fontSize: "18px",
+    fontSize: "16px",
     lineHeight: "24px",
     textTransform: "uppercase",
     fontWeight: "400",

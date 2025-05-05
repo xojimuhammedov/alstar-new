@@ -44,18 +44,17 @@ body {
 }
 
 .position-link {
-  background-color: #F44336;
-  color: #fff !important;
-  padding: 10px 16px;
   position: fixed;
-  right: 0px;
   z-index: 999;
-  top: 180px;
-  font-size: 20px;
-  line-height: 26px;
-  display: flex;
-  gap: 12px;
-  border-radius: 20px 0 0 20px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.position-whatsapp{
+  position: fixed;
+  z-index: 999;
+  bottom: 80px;
+  right: 20px;
 }
 
 .header-product {

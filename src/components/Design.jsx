@@ -1,9 +1,10 @@
-import { Box, Flex, Heading, Image, Link, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { BASE_URL, FILE_URL } from '../api';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 function Design() {
   const { t, i18n } = useTranslation();
   const [color, setColor] = useState();
@@ -31,8 +32,10 @@ function Design() {
         </SimpleGrid>
 
         <Flex mt="24px" justifyContent={'center'}>
-          <Link href="/colour" {...css.link}>
-            {t('Learn More')}
+          <Link to={'/colour'}>
+            <Text {...css.link}>
+              {t('Learn More')}
+            </Text>
           </Link>
         </Flex>
       </Box>

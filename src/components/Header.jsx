@@ -16,6 +16,8 @@ import axios from "axios";
 import { BASE_URL, FILE_URL } from "../api";
 import { Link } from "react-router-dom";
 
+import HeaderBanner from '../assets/header-banner.jpg'
+
 function Header() {
   const { t, i18n } = useTranslation();
   const [projects, setProjects] = useState();
@@ -42,7 +44,16 @@ function Header() {
         loop
         modules={[Pagination, Navigation]}
         className="mySwiper">
-        {projects?.map((item, index) => (
+        <SwiperSlide>
+          <Box width={"100%"}>
+            <Image
+              {...css.image}
+              src={HeaderBanner}
+              alt="CarouselOne"
+            />
+          </Box>
+        </SwiperSlide>
+        {/* {projects?.map((item, index) => (
           <SwiperSlide key={index}>
             <Box width={"100%"}>
               <Image
@@ -59,7 +70,7 @@ function Header() {
               </Link>
             </Box>
           </SwiperSlide>
-        ))}
+        ))} */}
         <div className="button-next-slide swiper-right next-button">
           <ChevronRightIcon fontSize={"34px"} />
         </div>
@@ -131,9 +142,9 @@ const css = {
     fontSize: "16px",
     width: "175px",
     transition: "0.3s all",
-    display:"flex",
-    justifyContent:"center",
-    alignItems:"center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
 
     _hover: {
       background: "#C22329",

@@ -1,10 +1,11 @@
-import { Box, Heading, Flex, Image, Text, Link } from "@chakra-ui/react";
+import { Box, Heading, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
 import { useTranslation } from "react-i18next";
 
 import NewsImage from "../assets/new.png";
 import EventImage from "../assets/event.png";
+import { Link } from "react-router-dom";
 
 function News() {
   const { t } = useTranslation();
@@ -17,8 +18,13 @@ function News() {
           <Box p="16px">
             <Heading {...css.name}>{t("news-list.name")}</Heading>
             <Text {...css.text}>{t("news-list.text")}</Text>
-            <Link href="/news-list" {...css.link}>
+            {/* <Link href="/news-list" {...css.link}>
               {t("Learn More")}
+            </Link> */}
+            <Link to={'/news-list'}>
+              <Text {...css.link}>
+                {t("Learn More")}
+              </Text>
             </Link>
           </Box>
         </Flex>
@@ -27,8 +33,10 @@ function News() {
           <Box p="16px">
             <Heading {...css.name}>{t("news-events.name")}</Heading>
             <Text {...css.text}>{t("news-events.text")}</Text>
-            <Link href="/news-events" {...css.link}>
-              {t("Learn More")}
+            <Link to={'/news-events'}>
+              <Text {...css.link}>
+                {t("Learn More")}
+              </Text>
             </Link>
           </Box>
         </Flex>

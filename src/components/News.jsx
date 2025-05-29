@@ -117,6 +117,10 @@ const css = {
     fontSize: "14px",
     transition: "0.3s all",
     borderRadius: "12px",
+    width: "160px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
 
     _hover: {
       background: "#C22329",

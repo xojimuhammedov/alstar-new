@@ -28,6 +28,7 @@ import './App.css'
 
 import CallIcon from './assets/call-icon.png'
 import { Flex, Image, Link } from "@chakra-ui/react";
+import ConsultationForm from "./components/Consultation";
 
 
 function App() {
@@ -50,9 +51,10 @@ function App() {
                 <Design />
                 <News />
               </main>
-              <section>
+              {/* <section>
                 <Projects />
-              </section>
+              </section> */}
+              <ConsultationForm />
               <footer>
                 <Footer />
               </footer>

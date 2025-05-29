@@ -21,9 +21,9 @@ function Company() {
     <Box className="company" p={"50px 0"} bg={"#111"}>
       <Swiper
         pagination={{
-          dynamicBullets: true,
+          dynamicBullets: false,
         }}
-        modules={[Navigation, Pagination]}
+        modules={[Navigation]}
         navigation={{
           nextEl: ".button-next-slide",
           prevEl: ".button-prev-slide",
@@ -33,10 +33,10 @@ function Company() {
         <SwiperSlide>
           <Box className="container">
             <Flex
-              flexDirection={{ base: "column", md: "row" }}
+              flexDirection={{ base: "column-reverse", md: "row" }}
               gap={"24px"}
               justifyContent={"space-between"}>
-              <Box pt={"36px"}>
+              <Box pl={'24px'} pt={"36px"}>
                 <Heading {...css.title}>
                   {t("Unlimited versatile façade design")}
                 </Heading>
@@ -57,11 +57,11 @@ function Company() {
         <SwiperSlide>
           <Box className="container">
             <Flex
-              flexDirection={{ base: "column", md: "row" }}
+              flexDirection={{ base: "column-reverse", md: "row" }}
               gap={"24px"}
               pb={"36px"}
               justifyContent={"space-between"}>
-              <Box pt={"48px"}>
+              <Box pl={'24px'} pt={"48px"}>
                 <Heading {...css.title}>{t("From idea to form")}</Heading>
                 <Text {...css.text}>
                   {t(
@@ -71,9 +71,6 @@ function Company() {
                 <Link to={`/projects-hight`}>
                   <Text {...css.link}>{t("Learn More")}</Text>
                 </Link>
-                {/* <Link href="/projects-hight" {...css.link}>
-                  {t('Learn More')}
-                </Link> */}
               </Box>
               <Image {...css.image} src={CarouselTwo} alt="Company" />
             </Flex>
@@ -101,7 +98,7 @@ const css = {
     fontSize: "14px",
     transition: "0.3s all",
     borderRadius: "12px",
-    width: "110px",
+    width: "140px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

@@ -17,6 +17,9 @@ import { BASE_URL, FILE_URL } from "../api";
 import { Link } from "react-router-dom";
 
 import HeaderBanner from '../assets/header-banner.jpg'
+import HeaderEnglish from '../assets/header-english.jpg'
+import HeaderUzbek from '../assets/header-uzbek.jpg'
+import HeaderRussian from '../assets/header-russian.jpg'
 
 function Header() {
   const { t, i18n } = useTranslation();
@@ -31,6 +34,8 @@ function Header() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const imageBanner = i18n?.language === "en" ? HeaderEnglish : i18n?.language === "ru" ? HeaderRussian : HeaderUzbek
   return (
     <Box className="header" position={"relative"}>
       <Swiper
@@ -44,11 +49,20 @@ function Header() {
         loop
         modules={[Pagination, Navigation]}
         className="mySwiper">
-        <SwiperSlide>
+        <SwiperSlide className="header-desktop">
           <Box width={"100%"}>
             <Image
               {...css.image}
               src={HeaderBanner}
+              alt="CarouselOne"
+            />
+          </Box>
+        </SwiperSlide>
+         <SwiperSlide className="header-mobile">
+          <Box width={"100%"}>
+            <Image
+              {...css.images}
+              src={imageBanner}
               alt="CarouselOne"
             />
           </Box>
@@ -94,6 +108,9 @@ const css = {
       md: "100%",
     },
     objectFit: "cover",
+  },
+  images:{
+    height:"100%"
   },
   box: {
     position: "absolute",

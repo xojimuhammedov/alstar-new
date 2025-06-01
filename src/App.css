@@ -49,3 +49,24 @@ a:hover {
     width: 100%;
     border-radius: 10px;
   }
+
+.header-mobile{
+    display: none;
+}
+
+@media (max-width:550px) {
+    
+    .header-mobile{
+        display: block;
+    }
+    .header-desktop{
+        display: none;
+    }
+    .color-text{
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical
+    }
+}

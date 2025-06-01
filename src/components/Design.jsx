@@ -21,7 +21,7 @@ function Design() {
     <Box p={'36px 0'}>
       <Box className="container-mix">
         <Heading {...css.title}>{t('color.name')}</Heading>
-        <Text {...css.text}>{t('color.text')}</Text>
+        <Text className='color-text' {...css.text}>{t('color.text')}</Text>
         <SimpleGrid gap={'24px'} columns={{ base: 1, sm: 2, md: 3, xl: 4 }}>
           {color?.slice(5, 9)?.map((item, index) => (
             <Box key={index}>
@@ -61,7 +61,10 @@ const css = {
     marginBottom: '24px'
   },
   text: {
-    fontSize: '16px',
+    fontSize: {
+      base:"14px",
+      lg:'16px'
+    },
     lineHeight: '25px',
     color: '#111',
     textAlign: 'center',

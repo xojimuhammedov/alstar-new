@@ -115,7 +115,7 @@ export default function ConsultationForm() {
     };
 
     return (
-        <Box minH="100vh"
+        <Box minH={{base:"90vh", lg:"100vh"}}
             bg={'#111111'}
             position="relative" overflow="hidden">
             {/* Background gradient */}
@@ -140,7 +140,7 @@ export default function ConsultationForm() {
             />
 
             <Container maxW="7xl" h="100vh" position="relative" zIndex={1}>
-                <Flex align="center" justify="space-between" h="100%" py={8}>
+                <Flex align="center" justify="space-between" h="100%" py={{base:2, lg:8}}>
                     {/* Left side - Form */}
                     <Box
                         bg="rgba(0, 0, 0, 0.7)"

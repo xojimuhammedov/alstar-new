@@ -9,7 +9,7 @@ function Design() {
   const { t, i18n } = useTranslation();
   const [filterData, setFilterData] = useState();
   const [collection, setCollection] = useState();
-  const [value, setValue] = useState('78ea0bfc-1ce6-41c3-a9b0-a9c5aab4114c')
+  const [value, setValue] = useState('b174d1ce-0902-42a9-b7c5-5bdce9ea5d45')
 
   useEffect(() => {
     axios
@@ -37,7 +37,7 @@ function Design() {
         <Text className='color-text' {...css.text}>{t('color.text')}</Text>
 
         <Flex flexWrap={'wrap'} gap={'12px'}>
-          {collection?.map((item, index) => (
+          {collection?.slice()?.reverse()?.map((item, index) => (
             <Box {...css.button} onClick={() => setValue(item?.id)}
               background={item?.id === value ? "#C22329" : "#111"}
               key={index} value={item.id}>

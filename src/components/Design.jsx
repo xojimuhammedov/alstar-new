@@ -38,7 +38,9 @@ function Design() {
 
         <Flex flexWrap={'wrap'} gap={'12px'}>
           {collection?.map((item, index) => (
-            <Box {...css.button} onClick={() => setValue(item?.id)} key={index} value={item.id}>
+            <Box {...css.button} onClick={() => setValue(item?.id)}
+              background={item?.id === value ? "#C22329" : "#111"}
+              key={index} value={item.id}>
               {item[`name_${i18n?.language}`]}
             </Box>
           ))}
@@ -61,40 +63,6 @@ function Design() {
               </Heading>
             </Box>
           ))}
-          {/* {value ? (
-                  <>
-                    {filterData?.map((item, index) => (
-                      <Box key={index}>
-                        <Image
-                          {...css.image}
-                          src={`${FILE_URL}/files/${item?.image}`}
-                          alt="DesignImage"
-                        />
-                        <Heading {...css.name}>
-                          {item[`name_${i18n?.language}`]}
-                        </Heading>
-                      </Box>
-                    ))}
-                  </>
-                ) : (
-                  <>
-                    {color?.map((item, index) => (
-                      <Box key={index}>
-                        <Image
-                          onClick={() => {
-                            onOpen(), setColorId(item?.id);
-                          }}
-                          {...css.image}
-                          src={`${FILE_URL}/files/${item?.image}`}
-                          alt="DesignImage"
-                        />
-                        <Heading {...css.name}>
-                          {item[`name_${i18n?.language}`]}
-                        </Heading>
-                      </Box>
-                    ))}
-                  </>
-                )} */}
         </SimpleGrid>
 
         <Flex mt="24px" justifyContent={'center'}>
@@ -161,7 +129,6 @@ const css = {
     }
   },
   button: {
-    backgroundColor: "#C22329",
     color: "white",
     padding: "8px 12px",
     borderRadius: "12px",

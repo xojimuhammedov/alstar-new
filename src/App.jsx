@@ -51,9 +51,6 @@ function App() {
                 <Design />
                 <News />
               </main>
-              {/* <section>
-                <Projects />
-              </section> */}
               <ConsultationForm />
               <footer>
                 <Footer />

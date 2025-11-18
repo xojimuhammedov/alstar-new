@@ -68,6 +68,7 @@ body {
   width: 12px !important;
   height: 12px !important;
 }
+
 .swiper-pagination-bullet-active {
   background-color: #ee1818 !important;
   width: 12px !important;
@@ -107,9 +108,11 @@ body {
 .next-button {
   transition: 0.3s;
 }
+
 .next-button:hover {
   background-color: #fff;
 }
+
 .next-button:hover svg path {
   fill: #ee1818;
 }

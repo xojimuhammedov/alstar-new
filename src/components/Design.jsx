@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Image, SimpleGrid, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
@@ -7,13 +7,26 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 function Design() {
   const { t, i18n } = useTranslation();
-  const [color, setColor] = useState();
+  const [filterData, setFilterData] = useState();
+  const [collection, setCollection] = useState();
+  const [value, setValue] = useState('78ea0bfc-1ce6-41c3-a9b0-a9c5aab4114c')
 
   useEffect(() => {
     axios
       .get(`${BASE_URL}/colours?limit=1000`)
       .then((res) => {
-        setColor(res?.data?.data);
+        setFilterData(
+          res?.data?.data?.filter((item) => item?.collectionId === value),
+        );
+      })
+      .catch((err) => console.log(err));
+  }, [value]);
+
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/collections?limit=1000`)
+      .then((res) => {
+        setCollection(res?.data?.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -22,13 +35,66 @@ function Design() {
       <Box className="container-mix">
         <Heading {...css.title}>{t('color.name')}</Heading>
         <Text className='color-text' {...css.text}>{t('color.text')}</Text>
-        <SimpleGrid gap={'24px'} columns={{ base: 1, sm: 2, md: 3, xl: 4 }}>
-          {color?.slice(5, 9)?.map((item, index) => (
-            <Box key={index}>
-              <Image {...css.image} src={`${FILE_URL}/files/${item?.image}`} alt="DesignImage" />
-              <Heading {...css.name}>{item[`name_${i18n?.language}`]}</Heading>
+
+        <Flex flexWrap={'wrap'} gap={'12px'}>
+          {collection?.map((item, index) => (
+            <Box {...css.button} onClick={() => setValue(item?.id)} key={index} value={item.id}>
+              {item[`name_${i18n?.language}`]}
             </Box>
           ))}
+        </Flex>
+
+        <SimpleGrid
+          mt={"24px"}
+          gap={"24px"}
+          columns={{ base: 1, sm: 2, md: 3, xl: 4 }}
+        >
+          {filterData?.map((item, index) => (
+            <Box key={index}>
+              <Image
+                {...css.image}
+                src={`${FILE_URL}/files/${item?.image}`}
+                alt="DesignImage"
+              />
+              <Heading {...css.name}>
+                {item[`name_${i18n?.language}`]}
+              </Heading>
+            </Box>
+          ))}
+          {/* {value ? (
+                  <>
+                    {filterData?.map((item, index) => (
+                      <Box key={index}>
+                        <Image
+                          {...css.image}
+                          src={`${FILE_URL}/files/${item?.image}`}
+                          alt="DesignImage"
+                        />
+                        <Heading {...css.name}>
+                          {item[`name_${i18n?.language}`]}
+                        </Heading>
+                      </Box>
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    {color?.map((item, index) => (
+                      <Box key={index}>
+                        <Image
+                          onClick={() => {
+                            onOpen(), setColorId(item?.id);
+                          }}
+                          {...css.image}
+                          src={`${FILE_URL}/files/${item?.image}`}
+                          alt="DesignImage"
+                        />
+                        <Heading {...css.name}>
+                          {item[`name_${i18n?.language}`]}
+                        </Heading>
+                      </Box>
+                    ))}
+                  </>
+                )} */}
         </SimpleGrid>
 
         <Flex mt="24px" justifyContent={'center'}>
@@ -62,8 +128,8 @@ const css = {
   },
   text: {
     fontSize: {
-      base:"14px",
-      lg:'16px'
+      base: "14px",
+      lg: '16px'
     },
     lineHeight: '25px',
     color: '#111',
@@ -93,5 +159,13 @@ const css = {
     _hover: {
       background: '#C22329'
     }
+  },
+  button: {
+    backgroundColor: "#C22329",
+    color: "white",
+    padding: "8px 12px",
+    borderRadius: "12px",
+    textTransform: "uppercase",
+    cursor: "pointer"
   }
 };

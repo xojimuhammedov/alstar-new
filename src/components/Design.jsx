@@ -107,7 +107,9 @@ const css = {
   image: {
     maxWidth: '100%',
     minWidth: '100%',
-    width: '100%'
+    width: '100%',
+    height: "150px",
+    objectFit: "cover"
   },
   name: {
     fontSize: '18px',

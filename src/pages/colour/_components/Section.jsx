@@ -136,7 +136,7 @@ const css = {
     maxWidth: "100%",
     minWidth: "100%",
     width: "100%",
-    height: "120px",
+    height: "150px",
     cursor: "pointer",
   },
   name: {

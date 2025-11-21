@@ -47,6 +47,9 @@ function Navbar() {
           <Link to="/contact">
             <Text {...css.links}>{t("nav3")}</Text>
           </Link>
+          <Link to="/branch">
+            <Text {...css.links}>{t("branch")}</Text>
+          </Link>
           <Language />
         </Flex>
         <Flex {...css.list}>

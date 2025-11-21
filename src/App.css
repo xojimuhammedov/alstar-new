@@ -8,7 +8,7 @@ a:hover {
     border-bottom: 1.5px solid rgba(142, 142, 142, 1);
     outline: none;
     width: 100%;
-    font-family:  sans-serif;
+    font-family: sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -48,25 +48,32 @@ a:hover {
 .form-map {
     width: 100%;
     border-radius: 10px;
-  }
+}
 
-.header-mobile{
+.header-mobile {
     display: none;
 }
 
+.yandex-map {
+    width: 80%;
+    height: 400px;
+}
+
 @media (max-width:550px) {
-    
-    .header-mobile{
+
+    .header-mobile {
         display: block;
     }
-    .header-desktop{
+
+    .header-desktop {
         display: none;
     }
-    .color-text{
+
+    .color-text {
         overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical
     }
 }

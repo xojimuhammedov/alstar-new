@@ -106,7 +106,7 @@
   "Colour Collections": "Colour Collections",
   "Choose": "Choose",
   "Social Media": "Social Media",
-    "Mutaxassis bilan konsultatsiya uchun": "For consultation with a specialist",
+  "Mutaxassis bilan konsultatsiya uchun": "For consultation with a specialist",
   "QOʻNGʻIROQ": "CALL",
   "BUYURTMA BERING": "ORDER NOW",
   "bilan belgilangan maydonlar majburiy to'ldirilishi kerak!": "Fields marked are required!",
@@ -120,5 +120,9 @@
   "Iltimos, shaxsiy ma'lumotlarni qayta ishlash shartlarini qabul qiling": "Please accept the terms of personal data processing",
   "Muvaffaqiyat!": "Success!",
   "Sizning so'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.": "Your request has been received. We will contact you shortly.",
-  "Yuborilmoqda...": "Sending..."
+  "Yuborilmoqda...": "Sending...",
+  "branch": "Branch",
+  "Республика Казахстан, Туркестанская область, город Шымкент, 226 квартал": "Republic of Kazakhstan, Turkestan region, Shymkent city, quarter 226",
+  "Izza Ko'chasi 59, Тоshkent": "59 Izza Street, Tashkent",
+  "Qozog'iston filiali":"Kazakhstan branch"
 }

@@ -29,6 +29,7 @@ import './App.css'
 import CallIcon from './assets/call-icon.png'
 import { Flex, Image, Link } from "@chakra-ui/react";
 import ConsultationForm from "./components/Consultation";
+import FilialPage from "./pages/FilialPage";
 
 
 function App() {
@@ -74,6 +75,11 @@ function App() {
         <Route path="/projects-hight" element={<ProjectHight />} />
         <Route path="/projects-list" element={<ProjectList />} />
         <Route path="/product/:id" element={<Product />} />
+        <Route path="/branch" element={<>
+          <Navbar />
+          <FilialPage />
+          <Footer />
+        </>} />
       </Routes>
 
       <Link

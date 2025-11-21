@@ -79,6 +79,9 @@ function NavModal() {
             <Link to="/contact">
               <Text {...css.link}>{t("nav3")}</Text>
             </Link>
+            <Link to="/branch">
+              <Text {...css.link}>{t("branch")}</Text>
+            </Link>
             <div className="dropdown">
               <Text className="dropbtn" {...css.link}>
                 {t("nav4")}
